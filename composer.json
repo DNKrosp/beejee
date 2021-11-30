@@ -1,0 +1,24 @@
+{
+  "name": "zero/beeline",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "root",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "files": ["paths.php"],
+    "psr-4": {
+      "core\\": "src/core",
+      "web\\": "src/web",
+      "model\\": "src/model"
+    }
+  },
+  "require": {
+    "ext-mbstring": "*",
+    "ext-http": "*"
+  }
+}
