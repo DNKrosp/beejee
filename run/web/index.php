@@ -37,9 +37,16 @@ try {
         $action = mb_strcut($path, 1, mb_strlen($path));
 
     $result = MainController::create()->run($action, $args);
-    $html = core\View::render($result);
-    echo $html;
+    if ($result!==null)
+    {
+        $html = core\View::render($result);
+        echo $html;
+    } else {
+        echo "Тут явно что-то не то...";
+    }
+
 } catch (ReflectionException $e) {
     file_put_contents(__DATA__."/logs/web.log", $e->__toString(), FILE_APPEND);
+    echo "В разаработке";
 }
 

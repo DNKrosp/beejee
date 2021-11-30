@@ -16,7 +16,7 @@ class MainController extends Controller
     #[ArrayShape(["tasks" => "array", "countPages" => "int"])] public function indexAction($page=1): ?array
     {
         $maxPages = $this->getCountOfPagesAction();
-        if ($maxPages < $page)
+        if ($maxPages < $page || $page < 1)
             return null;
 
         return [
